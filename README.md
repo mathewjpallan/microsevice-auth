@@ -55,7 +55,7 @@ http://localhost:18080/auth/realms/microservices/protocol/openid-connect/auth?cl
 - Use the code retrieved from the redirect callback to http://localhost:8000/login in the earlier step (failed redirect) and use the below curl to get the access token for the user. The code header in the curl is from the failed redirect. The client_secret needs to be replaced with the value from the credential tab of the microservices-client in keycloak.
 
 ```
-curl -X POST 'http://192.168.64.18:18080/auth/realms/microservices/protocol/openid-connect/token' \
+curl -X POST 'http://localhost:18080/auth/realms/microservices/protocol/openid-connect/token' \
  --header 'Content-Type: application/x-www-form-urlencoded' \
  --data-urlencode 'grant_type=authorization_code' \
  --data-urlencode 'client_id=microservices-client' \
